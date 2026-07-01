@@ -10,6 +10,9 @@ class Settings(BaseSettings):
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     chat_model: str = "google/flan-t5-base"
 
+    # Optional - if unset, /api/anomalies/alert just reports that no webhook is configured.
+    slack_webhook_url: str = ""
+
     class Config:
         env_file = ".env"
         extra = "ignore"  # tolerate leftover/unused env vars instead of erroring

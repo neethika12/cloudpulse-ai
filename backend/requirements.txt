@@ -13,3 +13,5 @@ langchain==0.3.30
 langchain-huggingface==0.3.1
 sentence-transformers==3.4.1
 pgvector==0.3.6
+scikit-learn==1.5.2
+requests==2.32.3
