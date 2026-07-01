@@ -14,9 +14,17 @@ engine = create_engine(
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
+# cost_embeddings uses pgvector's Vector column type, which only compiles against
+# a real Postgres + pgvector database. SQLite can't create that table, so we skip it
+# here — chat/RAG tests mock the service layer instead of touching this table directly.
+SQLITE_COMPATIBLE_TABLES = [
+    t for t in Base.metadata.sorted_tables if t.name != "cost_embeddings"
+]
+
+
 @pytest.fixture()
 def client():
-    Base.metadata.create_all(bind=engine)
+    Base.metadata.create_all(bind=engine, tables=SQLITE_COMPATIBLE_TABLES)
 
     def override_get_db():
         db = TestingSessionLocal()
@@ -27,5 +35,5 @@ def client():
 
     app.dependency_overrides[get_db] = override_get_db
     yield TestClient(app)
-    Base.metadata.drop_all(bind=engine)
+    Base.metadata.drop_all(bind=engine, tables=SQLITE_COMPATIBLE_TABLES)
     app.dependency_overrides.clear()
