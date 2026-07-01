@@ -1,28 +1,25 @@
 from fastapi import FastAPI
-from dotenv import load_dotenv
-import os
+from fastapi.middleware.cors import CORSMiddleware
+from app.routes import health, accounts, costs
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Create the FastAPI app
 app = FastAPI(
     title="CloudPulse AI",
     description="AI-powered cloud cost monitoring platform",
-    version="1.0.0"
+    version="1.0.0",
 )
 
-# Your first endpoint
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(health.router)
+app.include_router(accounts.router)
+app.include_router(costs.router)
+
+
 @app.get("/")
 def root():
-    return {
-        "message": "CloudPulse AI is running!",
-        "status": "healthy"
-    }
-
-@app.get("/health")
-def health_check():
-    return {
-        "status": "ok",
-        "service": "cloudpulse-ai-backend"
-    }
+    return {"message": "CloudPulse AI is running!", "status": "healthy"}
