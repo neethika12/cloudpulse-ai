@@ -3,14 +3,17 @@ from app.config import settings
 from app.models import Anomaly
 
 
-def send_anomaly_alert(anomalies: list[Anomaly]) -> tuple[bool, str]:
+def send_anomaly_alert(anomalies: list[Anomaly], webhook_url: str | None = None) -> tuple[bool, str]:
     """Posts a formatted summary of detected anomalies to Slack via an incoming webhook.
 
-    Returns (sent, detail) rather than raising, so a missing/misconfigured webhook
-    degrades gracefully instead of breaking the API response.
+    Prefers a per-user webhook (set via Settings in the UI) if provided, falling back
+    to the shared SLACK_WEBHOOK_URL env var. Returns (sent, detail) rather than
+    raising, so a missing/misconfigured webhook degrades gracefully instead of
+    breaking the API response.
     """
-    if not settings.slack_webhook_url:
-        return False, "No SLACK_WEBHOOK_URL configured - skipped."
+    target_url = webhook_url or settings.slack_webhook_url
+    if not target_url:
+        return False, "No Slack webhook configured - add one in Settings, or set SLACK_WEBHOOK_URL."
 
     if not anomalies:
         text = "CloudPulse AI: no cost anomalies detected. Spending looks normal."
@@ -25,7 +28,7 @@ def send_anomaly_alert(anomalies: list[Anomaly]) -> tuple[bool, str]:
         )
 
     try:
-        response = requests.post(settings.slack_webhook_url, json={"text": text}, timeout=10)
+        response = requests.post(target_url, json={"text": text}, timeout=10)
     except requests.RequestException as exc:
         return False, f"Slack request failed: {exc}"
 

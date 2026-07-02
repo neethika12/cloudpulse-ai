@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import health, accounts, costs, chat, anomalies
+from app.routes import health, accounts, costs, chat, anomalies, auth
 
 app = FastAPI(
     title="CloudPulse AI",
@@ -16,6 +16,7 @@ app.add_middleware(
 )
 
 app.include_router(health.router)
+app.include_router(auth.router)
 app.include_router(accounts.router)
 app.include_router(costs.router)
 app.include_router(chat.router)

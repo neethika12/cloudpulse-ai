@@ -25,7 +25,9 @@ def test_detect_anomalies_after_seed(client):
 
 def test_alert_without_webhook_configured(client, monkeypatch):
     monkeypatch.setattr(
-        anomalies_route, "send_anomaly_alert", lambda anomalies: (False, "No webhook configured.")
+        anomalies_route,
+        "send_anomaly_alert",
+        lambda anomalies, webhook_url=None: (False, "No webhook configured."),
     )
     res = client.post("/api/anomalies/alert")
     assert res.status_code == 200
