@@ -14,8 +14,9 @@ Weeks 1-5 of a 7-week build:
 - Auth: JWT-based signup/login/logout (bcrypt password hashing), gates access to the dashboard UI, with a guided first-time onboarding tour
 - Real AWS integration: connect an IAM user's credentials (encrypted at rest) and pull real Cost Explorer data alongside the mock generator
 - Per-user Slack webhook, configurable from a Settings page instead of only an env var
+- CI/CD: GitHub Actions runs the backend test suite against a real Postgres+pgvector service container, type-checks and builds the frontend, and builds both Docker images on every push/PR to `main`
 
-Deployment (Docker Compose runs everything locally today; AWS/CI-CD is still planned).
+Deployment (Docker Compose runs everything locally today; real AWS deployment - ECS, Terraform - is still planned).
 
 ## Tech stack
 
@@ -28,7 +29,8 @@ Deployment (Docker Compose runs everything locally today; AWS/CI-CD is still pla
 - Frontend: React + TypeScript, Vite, Recharts
 - Auth: JWT (python-jose) + bcrypt password hashing
 - Secrets: Fernet (cryptography) encryption for stored AWS credentials
-- Infra (planned): AWS ECS, Terraform, GitHub Actions
+- CI/CD: GitHub Actions
+- Infra (planned): AWS ECS, Terraform
 
 ## Running locally
 
@@ -127,3 +129,13 @@ Everything above (seeding, indexing, asking questions, detecting anomalies, conn
 ```bash
 docker compose exec backend pytest -v
 ```
+
+## CI/CD
+
+Every push and PR to `main` triggers a GitHub Actions workflow (`.github/workflows/ci.yml`) with three jobs:
+
+- **backend-tests** — spins up a real `pgvector/pgvector:pg16` service container, runs `alembic upgrade head` against it, then runs the full pytest suite
+- **frontend-build** — installs frontend deps and runs `tsc -b && vite build` (type-checks and builds for production)
+- **docker-build** — builds both the backend and frontend Docker images to catch any Dockerfile breakage, gated on the two jobs above passing
+
+No secrets or AWS credentials are needed - the pipeline is fully self-contained.
