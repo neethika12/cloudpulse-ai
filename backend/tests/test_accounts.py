@@ -34,6 +34,22 @@ def fake_boto3_client(service_name, **kwargs):
     raise ValueError(f"unexpected service {service_name}")
 
 
+class RejectingStsClient:
+    def get_caller_identity(self):
+        from botocore.exceptions import ClientError
+
+        raise ClientError(
+            {"Error": {"Code": "InvalidClientTokenId", "Message": "The security token is invalid"}},
+            "GetCallerIdentity",
+        )
+
+
+def rejecting_boto3_client(service_name, **kwargs):
+    if service_name == "sts":
+        return RejectingStsClient()
+    raise ValueError(f"unexpected service {service_name}")
+
+
 def _signup_and_get_token(client, email="aws-user@example.com"):
     res = client.post("/api/auth/signup", json={"email": email, "password": "password123"})
     return res.json()["access_token"]
@@ -70,6 +86,28 @@ def test_connect_and_sync_aws(client, monkeypatch):
     sync_res = client.post("/api/accounts/sync", headers=headers)
     assert sync_res.status_code == 200
     assert sync_res.json()["synced_records"] == 2
+
+
+def test_connect_aws_rejects_invalid_credentials(client, monkeypatch):
+    monkeypatch.setattr(
+        aws_service, "boto3", type("B", (), {"client": staticmethod(rejecting_boto3_client)})
+    )
+
+    token = _signup_and_get_token(client, email="badcreds@example.com")
+    headers = {"Authorization": f"Bearer {token}"}
+
+    res = client.post(
+        "/api/accounts/connect-aws",
+        json={"access_key_id": "AKIABAD", "secret_access_key": "wrong", "region": "us-east-1"},
+        headers=headers,
+    )
+    assert res.status_code == 400
+    assert "AWS rejected" in res.json()["detail"]
+
+    # Nothing should have been saved - the account stays disconnected.
+    me_res = client.get("/api/accounts/me", headers=headers)
+    assert me_res.status_code == 200
+    assert me_res.json() is None
 
 
 def test_update_profile_slack_and_onboarding(client):

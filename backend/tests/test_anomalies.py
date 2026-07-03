@@ -34,3 +34,33 @@ def test_alert_without_webhook_configured(client, monkeypatch):
     body = res.json()
     assert body["sent"] is False
     assert "count" in body
+
+
+def test_alert_with_signed_in_user_webhook(client, monkeypatch):
+    """When a signed-in user has a Slack webhook set in Settings, /alert should use
+    it - verified here by asserting the webhook_url the route passes through, without
+    making a real network call."""
+    captured = {}
+
+    def fake_send(anomalies, webhook_url=None):
+        captured["webhook_url"] = webhook_url
+        return True, "Alert sent."
+
+    monkeypatch.setattr(anomalies_route, "send_anomaly_alert", fake_send)
+
+    signup_res = client.post(
+        "/api/auth/signup", json={"email": "sre@example.com", "password": "password123"}
+    )
+    token = signup_res.json()["access_token"]
+    headers = {"Authorization": f"Bearer {token}"}
+
+    client.patch(
+        "/api/auth/me",
+        json={"slack_webhook_url": "https://hooks.slack.com/services/real-team"},
+        headers=headers,
+    )
+
+    res = client.post("/api/anomalies/alert", headers=headers)
+    assert res.status_code == 200
+    assert res.json()["sent"] is True
+    assert captured["webhook_url"] == "https://hooks.slack.com/services/real-team"

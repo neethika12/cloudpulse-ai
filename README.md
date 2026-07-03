@@ -4,7 +4,7 @@ AI-powered cloud cost monitoring platform. Connects to AWS billing data, visuali
 
 ## Status
 
-Weeks 1-5 of a 7-week build:
+All 7 weeks of the original build plan are complete:
 
 - FastAPI backend, PostgreSQL + SQLAlchemy models, Alembic migrations
 - Mock AWS cost data generator (90 days across 6 services, with injected spend spikes)
@@ -15,8 +15,42 @@ Weeks 1-5 of a 7-week build:
 - Real AWS integration: connect an IAM user's credentials (encrypted at rest) and pull real Cost Explorer data alongside the mock generator
 - Per-user Slack webhook, configurable from a Settings page instead of only an env var
 - CI/CD: GitHub Actions runs the backend test suite against a real Postgres+pgvector service container, type-checks and builds the frontend, and builds both Docker images on every push/PR to `main`
+- Observability: structured request logging, a Kubernetes/ECS-style liveness + readiness split (`/health`, `/health/ready`), and Prometheus metrics at `/metrics`
 
-Deployment (Docker Compose runs everything locally today; real AWS deployment - ECS, Terraform - is still planned).
+Deployment (Docker Compose runs everything locally today; real AWS deployment - ECS, Terraform - is a natural next step, deliberately scoped out to avoid ongoing AWS spend on a portfolio project).
+
+## Architecture
+
+```
+┌──────────────┐      REST/JSON       ┌──────────────────┐
+│  React + TS  │ ───────────────────► │  FastAPI backend  │
+│  (Vite,      │ ◄─────────────────── │                    │
+│  Recharts)   │      JWT auth        │  ┌──────────────┐  │
+└──────────────┘                      │  │ auth service │  │
+                                       │  │ aws service  │──┼──► AWS STS / Cost Explorer
+                                       │  │ anomaly svc  │──┼──► Slack incoming webhook
+                                       │  │ rag service  │  │
+                                       │  └──────────────┘  │
+                                       └─────────┬──────────┘
+                                                  │
+                                     ┌────────────▼────────────┐
+                                     │ PostgreSQL + pgvector    │
+                                     │ users / accounts / costs │
+                                     │ / anomalies / embeddings │
+                                     └──────────────────────────┘
+```
+
+Everything runs as three Docker Compose services (`db`, `backend`, `frontend`); the only external network calls are to AWS (if you connect a real account) and Slack (if you configure a webhook) - the AI models are local, not API calls.
+
+## Key engineering decisions
+
+A few choices worth being able to explain in an interview:
+
+- **Local-only AI stack, no API key.** Embeddings run through `sentence-transformers/all-MiniLM-L6-v2` and answer generation through `google/flan-t5-base`, both via Hugging Face `transformers`, orchestrated with LangChain. This was a deliberate pivot away from a hosted model (Azure OpenAI) to remove the cost/credential dependency entirely - anyone can clone the repo and run the full RAG pipeline with zero signup.
+- **Grounding the LLM's answers against retrieved context.** `flan-t5-base` is small enough to sometimes drop the dollar figure from its answer even when it correctly identifies the service. Rather than fight this with prompt engineering alone, `rag_service.py` validates the generated answer against the retrieved context chunks and backfills the number if it's missing - a lightweight version of the "grounding" pattern used in production RAG systems.
+- **Anomaly detection as two filters, not one.** A raw `IsolationForest(contamination=0.1)` over-flags borderline-normal spend as anomalous. Its output is instead treated as a candidate shortlist, then a statistical `value > mean + 2*std` threshold decides what actually gets surfaced - fewer false positives than either approach alone.
+- **Credentials encrypted at rest, validated before saving.** AWS secret access keys are Fernet-encrypted in the database; the backend never persists credentials AWS itself rejects; it always calls `sts.get_caller_identity()` first, before writing anything.
+- **CI runs migrations against real Postgres+pgvector, not just SQLite.** The test suite itself runs on SQLite for speed (pgvector's `Vector` column type isn't SQLite-compatible), but CI separately spins up the real `pgvector/pgvector:pg16` image and runs `alembic upgrade head` against it - the migration chain is verified against the actual database engine it will run on.
 
 ## Tech stack
 
@@ -30,6 +64,7 @@ Deployment (Docker Compose runs everything locally today; real AWS deployment - 
 - Auth: JWT (python-jose) + bcrypt password hashing
 - Secrets: Fernet (cryptography) encryption for stored AWS credentials
 - CI/CD: GitHub Actions
+- Observability: structured logging, Prometheus metrics (prometheus-fastapi-instrumentator)
 - Infra (planned): AWS ECS, Terraform
 
 ## Running locally
@@ -103,7 +138,9 @@ Note: AWS Cost Explorer must be enabled on the account (one-time toggle in the B
 
 ## API endpoints
 
-- `GET /health` — service health check
+- `GET /health` — liveness check (process is up)
+- `GET /health/ready` — readiness check (also confirms the database is reachable; returns 503 if not)
+- `GET /metrics` — Prometheus-format metrics (request counts, latency histograms, status codes)
 - `POST /api/auth/signup` — create an account, returns a JWT
 - `POST /api/auth/login` — returns a JWT
 - `GET /api/auth/me` — current user (requires `Authorization: Bearer <token>`)
@@ -128,6 +165,15 @@ Everything above (seeding, indexing, asking questions, detecting anomalies, conn
 
 ```bash
 docker compose exec backend pytest -v
+```
+
+## Monitoring
+
+```bash
+curl http://localhost:8000/health          # liveness
+curl http://localhost:8000/health/ready    # readiness (checks the DB)
+curl http://localhost:8000/metrics         # Prometheus metrics
+docker compose logs -f backend             # structured request logs (method, path, status, latency)
 ```
 
 ## CI/CD

@@ -82,7 +82,18 @@ jobs:
 
       - name: Install frontend dependencies
         working-directory: frontend
-        run: npm install
+        # package-lock.json is generated on whatever machine last ran `npm install`
+        # locally (a Mac, in this project's case). Rollup ships OS/arch-specific
+        # optional binaries, and npm has a long-standing bug (npm/cli#4828) where a
+        # lockfile resolved on one platform can omit the binary another platform
+        # needs, so `npm install`/`npm ci` fails on CI with "Cannot find module
+        # @rollup/rollup-linux-x64-gnu". Deleting the lockfile here forces npm to
+        # resolve dependencies fresh against the runner's actual platform every
+        # time, which sidesteps the bug entirely. The committed lockfile is still
+        # used for local dev and Docker builds, where this hasn't been an issue.
+        run: |
+          rm -f package-lock.json
+          npm install
 
       - name: Type-check and build
         working-directory: frontend
