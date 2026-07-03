@@ -4,7 +4,7 @@ AI-powered cloud cost monitoring platform. Connects to AWS billing data, visuali
 
 ## Status
 
-All 7 weeks of the original build plan are complete:
+Feature-complete:
 
 - FastAPI backend, PostgreSQL + SQLAlchemy models, Alembic migrations
 - Mock AWS cost data generator (90 days across 6 services, with injected spend spikes)
