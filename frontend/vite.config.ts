@@ -6,5 +6,7 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    // File events don't reach the container through Docker-on-Mac bind mounts, so poll.
+    watch: { usePolling: true, interval: 300 },
   },
 });

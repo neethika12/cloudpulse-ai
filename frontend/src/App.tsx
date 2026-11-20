@@ -6,19 +6,21 @@ import {
   MessageSquare,
   Settings,
   LogOut,
+  Gauge,
 } from "lucide-react";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
 import AnomaliesPanel from "./components/AnomaliesPanel";
 import ChatPanel from "./components/ChatPanel";
 import SettingsPanel from "./components/SettingsPanel";
+import UsagePanel from "./components/UsagePanel";
 import OnboardingTour from "./onboarding/OnboardingTour";
 import { api } from "./api/client";
 import { useAuth } from "./auth/AuthContext";
 import AuthPage from "./auth/AuthPage";
 import LandingPage from "./landing/LandingPage";
 
-type Tab = "dashboard" | "anomalies" | "chat" | "settings";
+type Tab = "dashboard" | "anomalies" | "chat" | "usage" | "settings";
 
 const PAGE_META: Record<Tab, { title: string; subtitle: string }> = {
   dashboard: {
@@ -32,6 +34,10 @@ const PAGE_META: Record<Tab, { title: string; subtitle: string }> = {
   chat: {
     title: "Chat",
     subtitle: "Ask questions about your cloud costs in plain English",
+  },
+  usage: {
+    title: "AI usage",
+    subtitle: "Tokens, cost, latency and tool calls for every chat request",
   },
   settings: {
     title: "Settings",
@@ -100,6 +106,13 @@ function Shell() {
             Chat
           </button>
           <button
+            className={`nav-item ${tab === "usage" ? "active" : ""}`}
+            onClick={() => setTab("usage")}
+          >
+            <Gauge size={16} />
+            AI usage
+          </button>
+          <button
             className={`nav-item ${tab === "settings" ? "active" : ""}`}
             onClick={() => setTab("settings")}
           >
@@ -140,6 +153,7 @@ function Shell() {
           {tab === "dashboard" && <Dashboard />}
           {tab === "anomalies" && <AnomaliesPanel />}
           {tab === "chat" && <ChatPanel />}
+          {tab === "usage" && <UsagePanel />}
           {tab === "settings" && <SettingsPanel />}
         </div>
       </main>

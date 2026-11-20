@@ -1,0 +1,1791 @@
+{
+  "settings": {
+    "chat_model": "gpt-6.1-sol",
+    "embedding_model": "",
+    "rerank_model": "gpt-6.1-sol",
+    "judge_model": "gpt-6.1-sol",
+    "production_config": "keyword+rerank",
+    "k": 5
+  },
+  "retrieval": {
+    "standard": {
+      "keyword": {
+        "metrics": {
+          "hit@1": 0.8,
+          "hit@5": 0.967,
+          "recall@5": 0.967,
+          "mrr": 0.869
+        },
+        "rows": [
+          {
+            "question": "How can I tell if my EC2 instances are too big for their workload?",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "Is it worth moving our servers to Arm-based processors?",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Our dev environment runs all weekend but nobody uses it. What should we do?",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "spot-instances.md",
+              "cost-anomaly-runbook.md",
+              "ec2-rightsizing.md",
+              "rds-database-costs.md"
+            ]
+          },
+          {
+            "question": "Should I migrate gp2 volumes to gp3?",
+            "relevant": [
+              "ec2-rightsizing.md",
+              "rds-database-costs.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "rds-database-costs.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "cost-anomaly-runbook.md"
+            ]
+          },
+          {
+            "question": "What is the difference between a Compute Savings Plan and an EC2 Instance Savings Plan?",
+            "relevant": [
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "ec2-rightsizing.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "How much of our compute spend should we commit to for a one or three year discount?",
+            "relevant": [
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          },
+          {
+            "question": "What does commitment utilization versus coverage mean?",
+            "relevant": [
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "tagging-budgets-and-finops.md",
+              "ec2-rightsizing.md",
+              "savings-plans-and-reserved-instances.md"
+            ]
+          },
+          {
+            "question": "Can I get a long-term discount on my RDS database?",
+            "relevant": [
+              "rds-database-costs.md",
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "savings-plans-and-reserved-instances.md",
+              "rds-database-costs.md",
+              "rds-database-costs.md",
+              "rds-database-costs.md",
+              "savings-plans-and-reserved-instances.md"
+            ]
+          },
+          {
+            "question": "How much warning do I get before AWS takes back cheap spare capacity?",
+            "relevant": [
+              "spot-instances.md"
+            ],
+            "retrieved": [
+              "spot-instances.md",
+              "tagging-budgets-and-finops.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "Which workloads can safely run on interruptible instances?",
+            "relevant": [
+              "spot-instances.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "How do I avoid running out of Spot capacity?",
+            "relevant": [
+              "spot-instances.md"
+            ],
+            "retrieved": [
+              "spot-instances.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "cost-anomaly-runbook.md"
+            ]
+          },
+          {
+            "question": "Where should I keep log files I must retain for seven years but almost never read?",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "rds-database-costs.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "savings-plans-and-reserved-instances.md"
+            ]
+          },
+          {
+            "question": "Why did moving millions of tiny files to Standard-IA make my bill go up?",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          },
+          {
+            "question": "Our versioned bucket keeps growing even though we delete files. Why?",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "rds-database-costs.md",
+              "tagging-budgets-and-finops.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "incomplete multipart uploads lifecycle rule",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "cost-anomaly-runbook.md",
+              "ec2-rightsizing.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          },
+          {
+            "question": "Does a Multi-AZ database cost more?",
+            "relevant": [
+              "rds-database-costs.md"
+            ],
+            "retrieved": [
+              "rds-database-costs.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "rds-database-costs.md"
+            ]
+          },
+          {
+            "question": "I stopped my RDS instance but it started again by itself a week later.",
+            "relevant": [
+              "rds-database-costs.md"
+            ],
+            "retrieved": [
+              "rds-database-costs.md",
+              "ec2-rightsizing.md",
+              "rds-database-costs.md",
+              "savings-plans-and-reserved-instances.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "How do I pick the cheapest memory setting for a serverless function?",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "Is provisioned concurrency billed even when there is no traffic?",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "A function writing to the bucket that triggers it is costing a fortune.",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "tagging-budgets-and-finops.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Private subnet instances downloading lots of data from S3 are expensive. How do I fix that?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md",
+              "ec2-rightsizing.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "How much does traffic between availability zones cost?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md",
+              "rds-database-costs.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Will putting a CDN in front of my bucket lower egress charges?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "networking-and-data-transfer.md",
+              "lambda-serverless-costs.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Are unattached Elastic IP addresses charged?",
+            "relevant": [
+              "ec2-rightsizing.md",
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "networking-and-data-transfer.md",
+              "networking-and-data-transfer.md",
+              "lambda-serverless-costs.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Our EC2 bill tripled yesterday. How should I investigate?",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "ec2-rightsizing.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md"
+            ]
+          },
+          {
+            "question": "Large GPU instances appeared in a region we never use.",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "savings-plans-and-reserved-instances.md",
+              "spot-instances.md",
+              "ec2-rightsizing.md",
+              "cost-anomaly-runbook.md",
+              "spot-instances.md"
+            ]
+          },
+          {
+            "question": "How does CloudPulse decide a day is an anomaly?",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "cost-anomaly-runbook.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "savings-plans-and-reserved-instances.md",
+              "cost-anomaly-runbook.md"
+            ]
+          },
+          {
+            "question": "Why don't my new tags show up in Cost Explorer?",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "cost-anomaly-runbook.md",
+              "tagging-budgets-and-finops.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "How do I get an email before we go over our monthly cloud budget?",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md",
+              "cost-anomaly-runbook.md"
+            ]
+          },
+          {
+            "question": "What are the phases of the FinOps lifecycle?",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "s3-storage-optimization.md",
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          }
+        ]
+      },
+      "keyword+rerank": {
+        "metrics": {
+          "hit@1": 0.933,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.953
+        },
+        "rows": [
+          {
+            "question": "How can I tell if my EC2 instances are too big for their workload?",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "ec2-rightsizing.md",
+              "ec2-rightsizing.md",
+              "spot-instances.md",
+              "spot-instances.md"
+            ]
+          },
+          {
+            "question": "Is it worth moving our servers to Arm-based processors?",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "savings-plans-and-reserved-instances.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Our dev environment runs all weekend but nobody uses it. What should we do?",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "rds-database-costs.md",
+              "spot-instances.md"
+            ]
+          },
+          {
+            "question": "Should I migrate gp2 volumes to gp3?",
+            "relevant": [
+              "ec2-rightsizing.md",
+              "rds-database-costs.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "rds-database-costs.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "cost-anomaly-runbook.md"
+            ]
+          },
+          {
+            "question": "What is the difference between a Compute Savings Plan and an EC2 Instance Savings Plan?",
+            "relevant": [
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "lambda-serverless-costs.md",
+              "savings-plans-and-reserved-instances.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "How much of our compute spend should we commit to for a one or three year discount?",
+            "relevant": [
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md"
+            ]
+          },
+          {
+            "question": "What does commitment utilization versus coverage mean?",
+            "relevant": [
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          },
+          {
+            "question": "Can I get a long-term discount on my RDS database?",
+            "relevant": [
+              "rds-database-costs.md",
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "rds-database-costs.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "rds-database-costs.md"
+            ]
+          },
+          {
+            "question": "How much warning do I get before AWS takes back cheap spare capacity?",
+            "relevant": [
+              "spot-instances.md"
+            ],
+            "retrieved": [
+              "spot-instances.md",
+              "tagging-budgets-and-finops.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "Which workloads can safely run on interruptible instances?",
+            "relevant": [
+              "spot-instances.md"
+            ],
+            "retrieved": [
+              "spot-instances.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "ec2-rightsizing.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "How do I avoid running out of Spot capacity?",
+            "relevant": [
+              "spot-instances.md"
+            ],
+            "retrieved": [
+              "spot-instances.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "spot-instances.md",
+              "spot-instances.md"
+            ]
+          },
+          {
+            "question": "Where should I keep log files I must retain for seven years but almost never read?",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "lambda-serverless-costs.md",
+              "rds-database-costs.md",
+              "savings-plans-and-reserved-instances.md"
+            ]
+          },
+          {
+            "question": "Why did moving millions of tiny files to Standard-IA make my bill go up?",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          },
+          {
+            "question": "Our versioned bucket keeps growing even though we delete files. Why?",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "rds-database-costs.md",
+              "tagging-budgets-and-finops.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "incomplete multipart uploads lifecycle rule",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "cost-anomaly-runbook.md",
+              "ec2-rightsizing.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          },
+          {
+            "question": "Does a Multi-AZ database cost more?",
+            "relevant": [
+              "rds-database-costs.md"
+            ],
+            "retrieved": [
+              "rds-database-costs.md",
+              "rds-database-costs.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "I stopped my RDS instance but it started again by itself a week later.",
+            "relevant": [
+              "rds-database-costs.md"
+            ],
+            "retrieved": [
+              "rds-database-costs.md",
+              "ec2-rightsizing.md",
+              "rds-database-costs.md",
+              "savings-plans-and-reserved-instances.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "How do I pick the cheapest memory setting for a serverless function?",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "Is provisioned concurrency billed even when there is no traffic?",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "A function writing to the bucket that triggers it is costing a fortune.",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "cost-anomaly-runbook.md",
+              "lambda-serverless-costs.md",
+              "s3-storage-optimization.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          },
+          {
+            "question": "Private subnet instances downloading lots of data from S3 are expensive. How do I fix that?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "networking-and-data-transfer.md",
+              "s3-storage-optimization.md",
+              "ec2-rightsizing.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "How much does traffic between availability zones cost?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "networking-and-data-transfer.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md",
+              "rds-database-costs.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Will putting a CDN in front of my bucket lower egress charges?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "ec2-rightsizing.md",
+              "networking-and-data-transfer.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "Are unattached Elastic IP addresses charged?",
+            "relevant": [
+              "ec2-rightsizing.md",
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "networking-and-data-transfer.md",
+              "ec2-rightsizing.md",
+              "networking-and-data-transfer.md",
+              "lambda-serverless-costs.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Our EC2 bill tripled yesterday. How should I investigate?",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "ec2-rightsizing.md",
+              "networking-and-data-transfer.md",
+              "cost-anomaly-runbook.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "Large GPU instances appeared in a region we never use.",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "cost-anomaly-runbook.md",
+              "savings-plans-and-reserved-instances.md",
+              "spot-instances.md",
+              "ec2-rightsizing.md",
+              "spot-instances.md"
+            ]
+          },
+          {
+            "question": "How does CloudPulse decide a day is an anomaly?",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "cost-anomaly-runbook.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "savings-plans-and-reserved-instances.md",
+              "cost-anomaly-runbook.md"
+            ]
+          },
+          {
+            "question": "Why don't my new tags show up in Cost Explorer?",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "cost-anomaly-runbook.md",
+              "tagging-budgets-and-finops.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "How do I get an email before we go over our monthly cloud budget?",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "cost-anomaly-runbook.md",
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          },
+          {
+            "question": "What are the phases of the FinOps lifecycle?",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "s3-storage-optimization.md",
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          }
+        ]
+      },
+      "vector": {
+        "skipped": "no embedding model configured"
+      },
+      "hybrid": {
+        "skipped": "no embedding model configured"
+      },
+      "hybrid+rerank": {
+        "skipped": "no embedding model configured"
+      }
+    },
+    "hard": {
+      "keyword": {
+        "metrics": {
+          "hit@1": 0.5,
+          "hit@5": 0.833,
+          "recall@5": 0.833,
+          "mrr": 0.657
+        },
+        "rows": [
+          {
+            "question": "We pay the full hourly price for machines that run around the clock all year. Can we pay less if we promise to keep using them?",
+            "relevant": [
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "spot-instances.md",
+              "s3-storage-optimization.md",
+              "lambda-serverless-costs.md",
+              "cost-anomaly-runbook.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "Our nightly batch jobs don't mind being killed and restarted. Is there a much cheaper way to run them?",
+            "relevant": [
+              "spot-instances.md"
+            ],
+            "retrieved": [
+              "spot-instances.md",
+              "cost-anomaly-runbook.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "Compliance backups we never touch are sitting in the default storage tier. Is there somewhere cheaper to keep them?",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "rds-database-costs.md",
+              "lambda-serverless-costs.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Our staging database keeps a hot standby copy in a second data center. Do we really need that outside production?",
+            "relevant": [
+              "rds-database-costs.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "rds-database-costs.md",
+              "networking-and-data-transfer.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Each call to our serverless functions finishes quickly, but the bill is still high. Could the amount of RAM we configured be the problem?",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Servers with no public address download huge datasets from object storage, and the bill shows a big per-gigabyte processing fee.",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md",
+              "networking-and-data-transfer.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Services in different data centers of the same region talk to each other constantly. Does that traffic cost anything?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "s3-storage-optimization.md",
+              "cost-anomaly-runbook.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Our bill jumped overnight and nobody knows why. Where do we start?",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "We think someone stole our access keys and is mining cryptocurrency on our account.",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "cost-anomaly-runbook.md",
+              "tagging-budgets-and-finops.md",
+              "s3-storage-optimization.md",
+              "tagging-budgets-and-finops.md"
+            ]
+          },
+          {
+            "question": "Finance wants every team to see exactly what it spends each month.",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md",
+              "savings-plans-and-reserved-instances.md",
+              "cost-anomaly-runbook.md"
+            ]
+          },
+          {
+            "question": "How can we get warned before this month's spending goes over plan?",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "cost-anomaly-runbook.md"
+            ]
+          },
+          {
+            "question": "Our application servers are sized for holiday-season traffic all year round.",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "networking-and-data-transfer.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Developers forget to turn off their test machines at night and over weekends.",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "rds-database-costs.md",
+              "ec2-rightsizing.md",
+              "spot-instances.md",
+              "rds-database-costs.md"
+            ]
+          },
+          {
+            "question": "We moved millions of small thumbnails to a cheaper, rarely-read tier and costs went up instead of down.",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "tagging-budgets-and-finops.md",
+              "rds-database-costs.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "One of our functions keeps triggering itself over and over.",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "We pay to keep function instances warm even at 3am when nobody is using the app.",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "spot-instances.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "savings-plans-and-reserved-instances.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "Would serving our videos through a content delivery network be cheaper than straight from the bucket?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "networking-and-data-transfer.md",
+              "networking-and-data-transfer.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Disks that belonged to servers we deleted months ago still show up on the bill.",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "rds-database-costs.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md",
+              "rds-database-costs.md"
+            ]
+          }
+        ]
+      },
+      "keyword+rerank": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "rows": [
+          {
+            "question": "We pay the full hourly price for machines that run around the clock all year. Can we pay less if we promise to keep using them?",
+            "relevant": [
+              "savings-plans-and-reserved-instances.md"
+            ],
+            "retrieved": [
+              "savings-plans-and-reserved-instances.md",
+              "rds-database-costs.md",
+              "spot-instances.md",
+              "s3-storage-optimization.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "Our nightly batch jobs don't mind being killed and restarted. Is there a much cheaper way to run them?",
+            "relevant": [
+              "spot-instances.md"
+            ],
+            "retrieved": [
+              "spot-instances.md",
+              "cost-anomaly-runbook.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "Compliance backups we never touch are sitting in the default storage tier. Is there somewhere cheaper to keep them?",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Our staging database keeps a hot standby copy in a second data center. Do we really need that outside production?",
+            "relevant": [
+              "rds-database-costs.md"
+            ],
+            "retrieved": [
+              "rds-database-costs.md",
+              "networking-and-data-transfer.md",
+              "rds-database-costs.md",
+              "rds-database-costs.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Each call to our serverless functions finishes quickly, but the bill is still high. Could the amount of RAM we configured be the problem?",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Servers with no public address download huge datasets from object storage, and the bill shows a big per-gigabyte processing fee.",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "networking-and-data-transfer.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Services in different data centers of the same region talk to each other constantly. Does that traffic cost anything?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "networking-and-data-transfer.md",
+              "networking-and-data-transfer.md",
+              "tagging-budgets-and-finops.md",
+              "networking-and-data-transfer.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Our bill jumped overnight and nobody knows why. Where do we start?",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "cost-anomaly-runbook.md",
+              "tagging-budgets-and-finops.md",
+              "ec2-rightsizing.md",
+              "networking-and-data-transfer.md",
+              "ec2-rightsizing.md"
+            ]
+          },
+          {
+            "question": "We think someone stole our access keys and is mining cryptocurrency on our account.",
+            "relevant": [
+              "cost-anomaly-runbook.md"
+            ],
+            "retrieved": [
+              "cost-anomaly-runbook.md",
+              "cost-anomaly-runbook.md",
+              "tagging-budgets-and-finops.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Finance wants every team to see exactly what it spends each month.",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md",
+              "tagging-budgets-and-finops.md",
+              "savings-plans-and-reserved-instances.md"
+            ]
+          },
+          {
+            "question": "How can we get warned before this month's spending goes over plan?",
+            "relevant": [
+              "tagging-budgets-and-finops.md"
+            ],
+            "retrieved": [
+              "tagging-budgets-and-finops.md",
+              "cost-anomaly-runbook.md",
+              "tagging-budgets-and-finops.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md"
+            ]
+          },
+          {
+            "question": "Our application servers are sized for holiday-season traffic all year round.",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "ec2-rightsizing.md",
+              "savings-plans-and-reserved-instances.md",
+              "savings-plans-and-reserved-instances.md",
+              "networking-and-data-transfer.md"
+            ]
+          },
+          {
+            "question": "Developers forget to turn off their test machines at night and over weekends.",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "rds-database-costs.md",
+              "ec2-rightsizing.md",
+              "spot-instances.md",
+              "rds-database-costs.md"
+            ]
+          },
+          {
+            "question": "We moved millions of small thumbnails to a cheaper, rarely-read tier and costs went up instead of down.",
+            "relevant": [
+              "s3-storage-optimization.md"
+            ],
+            "retrieved": [
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "s3-storage-optimization.md",
+              "tagging-budgets-and-finops.md",
+              "rds-database-costs.md"
+            ]
+          },
+          {
+            "question": "One of our functions keeps triggering itself over and over.",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md",
+              "ec2-rightsizing.md",
+              "lambda-serverless-costs.md",
+              "lambda-serverless-costs.md"
+            ]
+          },
+          {
+            "question": "We pay to keep function instances warm even at 3am when nobody is using the app.",
+            "relevant": [
+              "lambda-serverless-costs.md"
+            ],
+            "retrieved": [
+              "lambda-serverless-costs.md",
+              "ec2-rightsizing.md",
+              "spot-instances.md",
+              "ec2-rightsizing.md",
+              "savings-plans-and-reserved-instances.md"
+            ]
+          },
+          {
+            "question": "Would serving our videos through a content delivery network be cheaper than straight from the bucket?",
+            "relevant": [
+              "networking-and-data-transfer.md"
+            ],
+            "retrieved": [
+              "networking-and-data-transfer.md",
+              "networking-and-data-transfer.md",
+              "lambda-serverless-costs.md",
+              "networking-and-data-transfer.md",
+              "s3-storage-optimization.md"
+            ]
+          },
+          {
+            "question": "Disks that belonged to servers we deleted months ago still show up on the bill.",
+            "relevant": [
+              "ec2-rightsizing.md"
+            ],
+            "retrieved": [
+              "ec2-rightsizing.md",
+              "tagging-budgets-and-finops.md",
+              "rds-database-costs.md",
+              "s3-storage-optimization.md",
+              "networking-and-data-transfer.md"
+            ]
+          }
+        ]
+      },
+      "vector": {
+        "skipped": "no embedding model configured"
+      },
+      "hybrid": {
+        "skipped": "no embedding model configured"
+      },
+      "hybrid+rerank": {
+        "skipped": "no embedding model configured"
+      }
+    }
+  },
+  "answers": {
+    "rag": {
+      "metrics": {
+        "faithfulness": 0.9,
+        "correctness": 0.925,
+        "citation_rate": 1.0,
+        "avg_latency_ms": 16514,
+        "avg_tokens": 4874,
+        "avg_cost_usd": null
+      },
+      "rows": [
+        {
+          "id": "nat-gateway",
+          "kind": "knowledge",
+          "question": "Instances in private subnets pull a lot of data from S3 and our NAT gateway bill is high. What can we do?",
+          "reference": "Add a VPC gateway endpoint for S3 (free) so S3 traffic bypasses the NAT gateway and avoids its per-GB processing fee (about $0.045/GB in us-east-1).",
+          "answer": "**Add an S3 gateway VPC endpoint.** Private-subnet instances accessing S3 through a NAT gateway incur NAT processing fees for that traffic. A gateway endpoint routes S3 traffic privately without using NAT\u2014and the endpoint itself is free. [K1]\n\n1. **Create a gateway endpoint for S3** in your VPC and associate it with the route tables used by the private subnets. Choose **Gateway**, not an S3 interface endpoint, for this cost-saving approach; interface endpoints have their own charges. [K1] Check endpoint and bucket policies, then test S3 access from an instance before rolling it out broadly.\n\n2. **Verify the savings.** In Cost Explorer, track the `NatGateway-Bytes` usage type before and after the change; use VPC Flow Logs to identify any remaining high-volume traffic through NAT. [K2]\n\nThis targets **NAT processing charges for S3 traffic**, not the NAT gateway\u2019s hourly charge or S3\u2019s own charges. [K1][K4] Keep the NAT gateway if instances still need it for other outbound access.\n\nI can\u2019t quantify your savings without a breakdown of how much S3 traffic currently passes through NAT.",
+          "tools": [
+            "search_knowledge_base",
+            "search_knowledge_base"
+          ],
+          "citations": [
+            "networking-and-data-transfer.md",
+            "networking-and-data-transfer.md",
+            "s3-storage-optimization.md"
+          ],
+          "cited": true,
+          "latency_ms": 22449,
+          "tokens": 6624,
+          "cost_usd": null,
+          "faithfulness": 0.75,
+          "correctness": 1.0,
+          "reason": "The answer correctly recommends a free S3 gateway endpoint to bypass NAT processing fees, but its route-table association, policy checks, and advice to retain NAT for other outbound access are not explicitly supported by the context."
+        },
+        {
+          "id": "spot-fit",
+          "kind": "knowledge",
+          "question": "Can we run our CI build agents on Spot Instances, and what happens if AWS reclaims them?",
+          "reference": "Yes, CI agents are a good Spot fit (fault tolerant). Spot saves up to 90%; AWS gives a two-minute interruption notice; diversify instance types/AZs and use price-capacity-optimized allocation.",
+          "answer": "**Yes\u2014Spot is a good fit for CI build agents if builds can tolerate interruption and be retried.** It is less suitable for long builds that cannot checkpoint or restart cheaply. [K2]\n\n**If AWS reclaims an agent:**\n- AWS sends a **two-minute interruption notice**, available through instance metadata and Amazon EventBridge. An EC2 rebalance recommendation may arrive earlier, indicating elevated interruption risk. [K1]\n- Treat the agent as disposable: use the notice to stop accepting jobs and save any useful progress; an unfinished build needs to be retried on another agent unless it supports resuming from a checkpoint. [K1][K2] Whether that retry happens automatically depends on your CI configuration.\n\n**Two practical steps:**\n1. Make agents replaceable and configure interrupted-job retries; use the notice to drain the agent and checkpoint work where possible. [K1][K2]\n2. Keep a small On-Demand baseline for essential builds and use Spot for additional capacity. Diversify across instance types and Availability Zones, using the **price-capacity-optimized** allocation strategy. [K3][K5]\n\nWhich CI system are you using? That will determine how to implement draining and retries.",
+          "tools": [
+            "search_knowledge_base"
+          ],
+          "citations": [
+            "spot-instances.md",
+            "spot-instances.md",
+            "spot-instances.md",
+            "spot-instances.md"
+          ],
+          "cited": true,
+          "latency_ms": 12102,
+          "tokens": 1962,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 0.75,
+          "reason": "The answer is supported by the context and correctly explains Spot suitability, interruption notices, and resilience strategies, but omits the reference\u2019s savings of up to 90%."
+        },
+        {
+          "id": "s3-archive",
+          "kind": "knowledge",
+          "question": "We must keep audit logs for seven years but almost never read them. What storage class should we use?",
+          "reference": "S3 Glacier Deep Archive, the lowest-cost class, via a lifecycle rule; minimum storage duration 180 days; retrieval takes up to 12 hours (or 48 for bulk).",
+          "answer": "Use **Amazon S3 Glacier Deep Archive**, provided you can wait hours to retrieve logs. It\u2019s the lowest-cost S3 storage class for data retained for years and almost never read. [K4]\n\nKey considerations:\n- **Retrieval time:** up to 12 hours for standard retrieval or 48 hours for bulk retrieval. If audits require immediate access, consider Glacier Instant Retrieval instead. [K4]\n- **Minimum storage duration:** 180 days\u2014well within your seven-year retention requirement. [K1]\n- **Retention automation:** use S3 Lifecycle rules to archive logs and expire them only after the required retention period. [K2]\n\nStorage-class selection alone does not enforce seven-year retention; separately verify your retention and deletion-protection controls meet your audit requirements.",
+          "tools": [
+            "search_knowledge_base",
+            "search_knowledge_base"
+          ],
+          "citations": [
+            "s3-storage-optimization.md",
+            "s3-storage-optimization.md",
+            "s3-storage-optimization.md"
+          ],
+          "cited": true,
+          "latency_ms": 19971,
+          "tokens": 6462,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer correctly recommends S3 Glacier Deep Archive with lifecycle rules, states the supported 180-day minimum and 12-hour standard or 48-hour bulk retrieval times, and appropriately distinguishes storage selection from retention enforcement."
+        },
+        {
+          "id": "commitment-size",
+          "kind": "knowledge",
+          "question": "How should we size a Savings Plan purchase?",
+          "reference": "Commit only to the steady baseline (e.g. most of the lowest hourly compute spend over 30-60 days), not to peaks or anomalies; prefer Compute Savings Plans for flexibility; buy incrementally and watch utilization and coverage.",
+          "answer": "**Size the purchase to your durable hourly compute baseline\u2014not average monthly spend or peak demand.** Commit only to usage you\u2019re confident will persist throughout the plan\u2019s term. [K1]\n\nA practical approach:\n\n1. **Review 30\u201360 days of hourly eligible compute usage.** Identify the low, recurring baseline; exclude anomalies, temporary workloads, and migration periods from the sizing window. [K1]\n2. **Buy conservatively at first.** Cover most\u2014not all\u2014of that dependable baseline, then add commitments in small increments as usage proves stable. [K1]\n3. **Prioritize utilization over coverage.** Utilization measures how much purchased commitment you actually use; coverage measures how much eligible usage is covered. Aim for utilization close to 100% before increasing coverage. [K2]\n4. **Choose the flexibility you need.** Compute Savings Plans are the safer default if workloads may move between EC2 families, Regions, Fargate, or Lambda; EC2 Instance Savings Plans are narrower, tied to one instance family and Region. [K3][K5]\n5. **Validate the purchase in Cost Explorer.** Use its Savings Plans recommendations and coverage/utilization reports to check the proposed commitment. [K2]\n\n**I can\u2019t give you a defensible $/hour purchase amount from the data available here.** These cost tools expose daily and service-level spend, not hourly eligible usage or existing commitment coverage. Share your Cost Explorer Savings Plans recommendation and current coverage/utilization reports, and I can help assess the proposed size.",
+          "tools": [
+            "search_knowledge_base",
+            "search_knowledge_base"
+          ],
+          "citations": [
+            "savings-plans-and-reserved-instances.md",
+            "savings-plans-and-reserved-instances.md",
+            "savings-plans-and-reserved-instances.md",
+            "savings-plans-and-reserved-instances.md"
+          ],
+          "cited": true,
+          "latency_ms": 26422,
+          "tokens": 6261,
+          "cost_usd": null,
+          "faithfulness": 0.75,
+          "correctness": 1.0,
+          "reason": "The answer fully matches the reference\u2019s conservative baseline sizing, flexibility, incremental purchasing, and monitoring guidance, but its claim that the available cost tools expose only daily and service-level spend is unsupported by the context."
+        },
+        {
+          "id": "rds-dev",
+          "kind": "knowledge",
+          "question": "How can we reduce the cost of our development RDS databases?",
+          "reference": "Turn off Multi-AZ for non-production, rightsize, stop instances when idle (they auto-start after 7 days, so schedule re-stops), consider Aurora Serverless v2 for spiky dev use, use gp3 storage, clean old snapshots.",
+          "answer": "Your total RDS spend was **$1,002.81 over October 22\u2013November 20, 2026**. The available cost data doesn\u2019t separate development from production, so I can\u2019t quantify development-only savings yet.\n\nFor development databases, prioritize:\n\n1. **Stop databases outside working hours.** Schedule eligible instances to stop overnight and on weekends. This pauses instance charges, but storage still bills. RDS automatically restarts stopped instances after seven days; for longer idle periods, consider taking a snapshot and deleting the instance if restore time is acceptable. [K1]\n\n2. **Right-size and remove unnecessary redundancy.** Check CPU, freeable memory, IOPS, and Performance Insights before choosing a smaller instance. [K2] Where development doesn\u2019t require high availability or replica testing, consider Single-AZ and remove unused read replicas. [K5]\n\nThen review storage: use gp3 where supported and appropriate, shorten backup retention to your actual needs, and delete obsolete manual snapshots. [K3]\n\n**Avoid committing too early:** Savings Plans don\u2019t cover RDS; consider RDS Reserved Instances only after rightsizing, for databases you expect to keep running for at least a year. [K4]\n\nIf you share the development instances\u2019 **engine, instance class, region, Single-/Multi-AZ configuration, storage, and required operating hours**, we can narrow this to a concrete plan.",
+          "tools": [
+            "get_cost_summary",
+            "search_knowledge_base"
+          ],
+          "citations": [
+            "rds-database-costs.md",
+            "rds-database-costs.md",
+            "rds-database-costs.md",
+            "rds-database-costs.md",
+            "rds-database-costs.md"
+          ],
+          "cited": true,
+          "latency_ms": 15101,
+          "tokens": 3240,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 0.75,
+          "reason": "All factual claims are supported by the context, and the answer covers most recommended savings measures but omits Aurora Serverless v2 for spiky workloads and explicitly scheduling re-stops after the seven-day automatic restart."
+        },
+        {
+          "id": "spike-runbook",
+          "kind": "knowledge",
+          "question": "EC2 spend suddenly tripled. Walk me through investigating it.",
+          "reference": "Confirm at daily granularity; group by usage type, Region, account and tags; correlate with deployments/Auto Scaling; check CloudTrail for RunInstances; if unknown Regions or GPU instances, suspect leaked credentials and rotate them; contain, then add budgets/anomaly detection.",
+          "answer": "**The daily data shows a one-day EC2 spike, not a sustained tripling.** The latest spike was **November 8, 2026**:\n\n| Period | EC2 spend |\n|---|---:|\n| November 1\u20137 daily average | $72.35 |\n| November 8 | **$259.75** |\n| November 9 | $85.49 |\n\nNovember 8 was about **3.6\u00d7** the preceding week\u2019s average. There was also an earlier spike on **October 6: $243.78**. The anomaly tool returned **no flagged days**, despite these visible spikes.\n\nHere\u2019s how I\u2019d investigate, starting with November 8.\n\n### 1. Confirm whether it was expected\nCompare the spike with the previous two to four weeks, and check for a planned launch, load test, migration, or upfront commitment purchase. [K2] Ask the workload owner specifically: **\u201cWhat ran on November 8, and was anything similar run on October 6?\u201d**\n\n### 2. Identify which charge actually increased\nIn **AWS Cost Explorer**, filter to EC2, use daily granularity, and compare November 8 against the preceding weeks; group first by **usage type**, then **Region**, **linked account**, and **resource tags**. [K1][K2]\n\nThe usage-type breakdown distinguishes instance-hour charges such as `BoxUsage` from storage or networking charges such as `EBS:VolumeUsage` and `DataTransfer-Out-Bytes`. [K1] Don\u2019t assume that an EC2 cost spike necessarily means more instances.\n\n### 3. Trace the increase to a change\nFor the account and Region responsible, review deployments, infrastructure-as-code changes, Auto Scaling activity, and scheduled jobs around the spike. [K3] Search CloudTrail for `RunInstances` and other relevant resource-creation events to establish who created resources and when. [K3]\n\nUnexpected large or GPU instances in an unused Region can indicate leaked credentials; if that is what you find, rotate the credentials immediately and contact AWS Support. [K3]\n\n### 4. Prevent a repeat once the cause is known\nAdd an EC2 AWS Budgets alert or Cost Anomaly Detection monitor, and tag the affected resources so ownership is clear. [K5]\n\n**My two immediate next steps:** get the November 8 usage-type/account/Region breakdown, then correlate the largest increase with change logs and CloudTrail. [K1][K3] The data available here confirms the timing and size, but **does not identify the responsible resources or root cause**.",
+          "tools": [
+            "get_daily_costs",
+            "get_anomalies",
+            "search_knowledge_base"
+          ],
+          "citations": [
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md"
+          ],
+          "cited": true,
+          "latency_ms": 24798,
+          "tokens": 5458,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 0.75,
+          "reason": "The answer accurately uses the daily costs and supported investigation guidance, but omits an explicit containment step before adding budgets and anomaly detection."
+        },
+        {
+          "id": "top-service",
+          "kind": "data",
+          "question": "Which service has cost the most across all my data, and how much did it cost?",
+          "reference": "EC2 costs the most, $6,200.66 in total.",
+          "answer": "**EC2** cost the most: **$6,200.66 USD** across all your data, from August 23 to November 20, 2026.",
+          "tools": [
+            "get_cost_summary"
+          ],
+          "citations": [],
+          "cited": null,
+          "latency_ms": 8942,
+          "tokens": 1373,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer correctly identifies EC2 as the highest-cost service at $6,200.66, and its stated date range is supported by the tool arguments."
+        },
+        {
+          "id": "last-7-days",
+          "kind": "data",
+          "question": "What was my total AWS spend over the last 7 days, including today?",
+          "reference": "Total spend from 2026-11-14 to today is $809.86.",
+          "answer": "Your total AWS spend over the last 7 days, including today (**November 14\u201320, 2026**), was **$809.86 USD**.",
+          "tools": [
+            "get_cost_summary"
+          ],
+          "citations": [],
+          "cited": null,
+          "latency_ms": 4656,
+          "tokens": 1365,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer accurately reports the supported total of $809.86 for November 14\u201320, 2026, matching the reference and the requested seven-day period including today."
+        },
+        {
+          "id": "anomalies",
+          "kind": "data",
+          "question": "Were there any spending anomalies? List each service and date.",
+          "reference": "There are no anomalies.",
+          "answer": "No spending anomalies were flagged for any service during **August 23\u2013November 20, 2026**.",
+          "tools": [
+            "get_anomalies"
+          ],
+          "citations": [],
+          "cited": null,
+          "latency_ms": 4915,
+          "tokens": 1201,
+          "cost_usd": null,
+          "faithfulness": 0.5,
+          "correctness": 1.0,
+          "reason": "The answer correctly states that there were no spending anomalies, but the August 23\u2013November 20, 2026 date range is not supported by the context."
+        },
+        {
+          "id": "spike-advice",
+          "kind": "mixed",
+          "question": "Which service had the biggest anomaly, and what should I check to find the cause?",
+          "reference": "Names the service and date of the largest anomaly from the data, and suggests runbook steps such as grouping by usage type, checking recent deployments/Auto Scaling and CloudTrail.",
+          "answer": "**EC2 had the largest observed service-level spike: $259.75 on November 8, 2026**, up from $59.75 the day before\u2014a **$200.00 increase**. It fell to $85.49 the following day.\n\nOne caveat: **the anomaly detector returned no flagged anomalies**, so this is an observed spike, not a detector-confirmed anomaly. The largest *total-bill* spike was October 6 at $440.86, including EC2 at $243.78 and RDS at $169.23.\n\nTo investigate EC2\u2019s November 8 spike:\n\n1. **Identify the charge category.** In Cost Explorer, filter to EC2 and compare November 8 with the preceding two to four weeks. Group by usage type, then Region, linked account, and resource tags to distinguish instance hours, EBS storage, or data transfer. [K3][K1]\n2. **Find what changed.** Check deployments, infrastructure changes, Auto Scaling activity, and scheduled jobs around November 8. Search CloudTrail for `RunInstances` to identify who launched instances and when. [K2]\n\nThe available cost data shows **when and which service spiked**, but not the resource or underlying cause.",
+          "tools": [
+            "get_daily_costs",
+            "get_anomalies",
+            "get_cost_summary",
+            "get_cost_summary",
+            "search_knowledge_base",
+            "get_daily_costs",
+            "get_daily_costs"
+          ],
+          "citations": [
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md"
+          ],
+          "cited": true,
+          "latency_ms": 25786,
+          "tokens": 14789,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer accurately identifies EC2\u2019s November 8 spike using the supplied costs, distinguishes it from the empty detector results and largest total-bill spike, and provides supported Cost Explorer, deployment, Auto Scaling, and CloudTrail investigation steps."
+        }
+      ]
+    },
+    "full_context": {
+      "metrics": {
+        "faithfulness": 0.9,
+        "correctness": 0.975,
+        "citation_rate": 1.0,
+        "avg_latency_ms": 10130,
+        "avg_tokens": 11350,
+        "avg_cost_usd": null
+      },
+      "rows": [
+        {
+          "id": "nat-gateway",
+          "kind": "knowledge",
+          "question": "Instances in private subnets pull a lot of data from S3 and our NAT gateway bill is high. What can we do?",
+          "reference": "Add a VPC gateway endpoint for S3 (free) so S3 traffic bypasses the NAT gateway and avoids its per-GB processing fee (about $0.045/GB in us-east-1).",
+          "answer": "**Add an S3 gateway VPC endpoint** so your private-subnet instances access S3 without sending that traffic through the NAT gateway. Gateway endpoints for S3 are free and avoid NAT data-processing fees for that traffic\u2014often the quickest networking saving. [K24]\n\n1. **Route S3 traffic through the endpoint:** create it in the VPC and associate it with the route tables used by those private subnets. Keep the NAT gateway for traffic that still needs it. [K24]\n2. **Verify the impact:** in Cost Explorer, look for usage types containing `NatGateway-Bytes`; use VPC Flow Logs to identify which resources generate the traffic. [K26]\n\nThis should reduce NAT processing charges, but it won\u2019t eliminate the gateway\u2019s hourly charge while the gateway remains provisioned. [K24] I haven\u2019t checked your bill, so I can\u2019t quantify your savings yet.",
+          "tools": [],
+          "citations": [
+            "networking-and-data-transfer.md",
+            "networking-and-data-transfer.md"
+          ],
+          "cited": true,
+          "latency_ms": 5263,
+          "tokens": 5799,
+          "cost_usd": null,
+          "faithfulness": 0.75,
+          "correctness": 1.0,
+          "reason": "The answer correctly recommends a free S3 gateway endpoint to bypass NAT processing fees, but its route-table association instructions are not explicitly supported by the context."
+        },
+        {
+          "id": "spot-fit",
+          "kind": "knowledge",
+          "question": "Can we run our CI build agents on Spot Instances, and what happens if AWS reclaims them?",
+          "reference": "Yes, CI agents are a good Spot fit (fault tolerant). Spot saves up to 90%; AWS gives a two-minute interruption notice; diversify instance types/AZs and use price-capacity-optimized allocation.",
+          "answer": "Yes\u2014**CI/CD build agents are a good fit for Spot Instances** if builds can tolerate interruption and be retried on another agent. Spot offers discounts of up to 90% versus On-Demand; that is general AWS guidance, not an estimate of your savings. [K47][K49]\n\n**If AWS reclaims an instance**, it sends a **two-minute interruption notice**, available through instance metadata and Amazon EventBridge. Your agent should use that window to stop accepting jobs, checkpoint work where possible, and drain connections; unfinished builds need to be retried. An EC2 rebalance recommendation may arrive earlier, signalling increased interruption risk. [K48][K49]\n\nFor a practical setup:\n- **Keep a small On-Demand baseline and use Spot for extra build capacity**, so interruptions do not remove your entire agent pool. [K51]\n- **Use several instance types across multiple Availability Zones**, with the `price-capacity-optimized` allocation strategy to reduce interruption risk. [K50]\n\nKeep long builds that cannot checkpoint or tolerate a restart on On-Demand agents. [K49]",
+          "tools": [],
+          "citations": [
+            "spot-instances.md",
+            "spot-instances.md",
+            "spot-instances.md",
+            "spot-instances.md",
+            "spot-instances.md"
+          ],
+          "cited": true,
+          "latency_ms": 6334,
+          "tokens": 5834,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer accurately reflects the context and reference on CI suitability, up to 90% savings, two-minute interruption notices, and diversified price-capacity-optimized capacity, with supported practical interruption-handling guidance."
+        },
+        {
+          "id": "s3-archive",
+          "kind": "knowledge",
+          "question": "We must keep audit logs for seven years but almost never read them. What storage class should we use?",
+          "reference": "S3 Glacier Deep Archive, the lowest-cost class, via a lifecycle rule; minimum storage duration 180 days; retrieval takes up to 12 hours (or 48 for bulk).",
+          "answer": "**S3 Glacier Deep Archive** is the best fit for audit logs you must retain for seven years and almost never read: it is the lowest-cost S3 storage class for long-term, rarely accessed data. [K35]\n\nTwo caveats:\n- **Retrieval is slow:** allow up to 12 hours for standard retrieval or 48 hours for bulk retrieval\u2014confirm those delays meet your audit requirements. [K35]\n- **Minimum storage duration is 180 days:** deleting or transitioning objects sooner still incurs charges for the remaining days, though your seven-year retention fits comfortably. [K36]\n\nUse an **S3 Lifecycle rule** to automate archiving and expire logs only after your required retention period. [K37]",
+          "tools": [],
+          "citations": [
+            "s3-storage-optimization.md",
+            "s3-storage-optimization.md",
+            "s3-storage-optimization.md"
+          ],
+          "cited": true,
+          "latency_ms": 5619,
+          "tokens": 5757,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer matches the reference and context by recommending S3 Glacier Deep Archive via lifecycle rules, noting its lowest cost, 180-day minimum duration, and 12-hour standard or 48-hour bulk retrieval times."
+        },
+        {
+          "id": "commitment-size",
+          "kind": "knowledge",
+          "question": "How should we size a Savings Plan purchase?",
+          "reference": "Commit only to the steady baseline (e.g. most of the lowest hourly compute spend over 30-60 days), not to peaks or anomalies; prefer Compute Savings Plans for flexibility; buy incrementally and watch utilization and coverage.",
+          "answer": "**Size a Savings Plan to your steady baseline\u2014not your average spend or peak usage.** Commit only to usage you\u2019re confident will persist, excluding anomalies and migrations. [K45]\n\nA practical approach:\n\n1. **Optimize first.** Rightsize compute and remove idle resources before locking in a commitment. [K8][K11][K45]\n2. **Review 30\u201360 days of hourly eligible compute spend.** Use the lowest recurring hourly spend as a starting point, commit to most\u2014not all\u2014of that baseline, and add purchases incrementally as sustained usage grows. [K45]\n3. **Account for existing commitments.** Check Cost Explorer\u2019s coverage, utilization, and purchase recommendations; prioritize near-100% utilization before increasing coverage. [K46]\n4. **Choose flexibility and term carefully.** A Compute Savings Plan is the safest default when instance families or Regions may change, and also covers Fargate and Lambda. [K41] Choose a term you\u2019re confident about: the commitment is billed whether you use it or not. [K44]\n\n**I can\u2019t give a defensible $/hour purchase amount from the available data:** these tools provide daily service totals, not hourly eligible usage or existing commitment coverage. Use Cost Explorer\u2019s Savings Plans recommendations and hourly usage to establish the amount, then validate it against planned downsizing or workload changes. [K45][K46]",
+          "tools": [],
+          "citations": [
+            "savings-plans-and-reserved-instances.md",
+            "ec2-rightsizing.md",
+            "ec2-rightsizing.md",
+            "savings-plans-and-reserved-instances.md",
+            "savings-plans-and-reserved-instances.md",
+            "savings-plans-and-reserved-instances.md"
+          ],
+          "cited": true,
+          "latency_ms": 8621,
+          "tokens": 5884,
+          "cost_usd": null,
+          "faithfulness": 0.75,
+          "correctness": 1.0,
+          "reason": "The answer matches the reference\u2019s baseline sizing, Compute Savings Plan flexibility, incremental purchasing, and utilization monitoring guidance, but its claim that the available tools provide only daily service totals is not supported by the context."
+        },
+        {
+          "id": "rds-dev",
+          "kind": "knowledge",
+          "question": "How can we reduce the cost of our development RDS databases?",
+          "reference": "Turn off Multi-AZ for non-production, rightsize, stop instances when idle (they auto-start after 7 days, so schedule re-stops), consider Aurora Serverless v2 for spiky dev use, use gp3 storage, clean old snapshots.",
+          "answer": "For development RDS databases, prioritize these changes:\n\n1. **Stop databases outside working hours.** Automate a start/stop schedule for nights and weekends. Stopping pauses instance charges, but storage still bills; RDS also automatically restarts stopped instances after seven days, so longer pauses need automation to stop them again. [K30]\n\n2. **Review Multi-AZ and read replicas.** Development databases usually don\u2019t need Multi-AZ, which roughly doubles instance cost. Remove read replicas that serve little traffic, provided your testing requirements allow it. [K29]\n\n3. **Rightsize using utilization metrics.** Check CloudWatch CPU, freeable memory, and read/write IOPS alongside Performance Insights. Low CPU with ample free memory suggests a smaller instance may be appropriate; also consider Graviton-based classes for better price performance. [K28]\n\n4. **Trim storage and backups.** Use gp3 where available unless you need higher provisioned-IOPS guarantees. Review backup retention and delete manual snapshots you no longer need. [K32]\n\n**Start with scheduling and reviewing Multi-AZ** before committing to discounts. For databases you expect to run for at least a year, consider RDS Reserved Instances\u2014but rightsize first; Savings Plans don\u2019t cover RDS. [K33]\n\nI haven\u2019t checked your bill or database configurations, so I can\u2019t yet quantify savings or confirm which changes apply.",
+          "tools": [],
+          "citations": [
+            "rds-database-costs.md",
+            "rds-database-costs.md",
+            "rds-database-costs.md",
+            "rds-database-costs.md",
+            "rds-database-costs.md"
+          ],
+          "cited": true,
+          "latency_ms": 9073,
+          "tokens": 5889,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 0.75,
+          "reason": "All factual claims are supported by the context, and the answer covers the reference recommendations except considering Aurora Serverless v2 for spiky development workloads."
+        },
+        {
+          "id": "spike-runbook",
+          "kind": "knowledge",
+          "question": "EC2 spend suddenly tripled. Walk me through investigating it.",
+          "reference": "Confirm at daily granularity; group by usage type, Region, account and tags; correlate with deployments/Auto Scaling; check CloudTrail for RunInstances; if unknown Regions or GPU instances, suspect leaked credentials and rotate them; contain, then add budgets/anomaly detection.",
+          "answer": "**The daily data shows a one-day EC2 spike on November 8, not a sustained tripling.** Here\u2019s how I\u2019d investigate it.\n\n### 1. Confirm the timing and size\n- **November 8:** $259.75.\n- **October 23\u2013November 7:** daily spend ranged from $40.59 to $88.71.\n- **November 9:** spend returned to $85.49; subsequent days through November 20 stayed within the earlier range.\n\nThe anomaly tool returned **no flagged days**, despite the visible jump. The daily data is therefore the stronger starting point here. I can confirm the spike, but these tools don\u2019t expose resource-level or usage-type details, so **the cause is not yet established**.\n\nFirst, check whether November 8 coincided with a planned launch, load test, migration, or upfront commitment purchase. [K2]\n\n### 2. Identify which charge increased\nIn **Cost Explorer**, filter to EC2, use **daily granularity**, and compare November 8 against the preceding two weeks. [K2] Group by **usage type**, then **Region**, **linked account**, and **resource tags**. [K3]\n\nLook for:\n- `BoxUsage`: instance hours.\n- `EBS:VolumeUsage`: EBS storage.\n- `DataTransfer-Out-Bytes`: internet egress.\n- `NatGateway-Bytes`: NAT processing. [K3]\n\nThis distinguishes \u201cmore or larger instances\u201d from storage or networking charges\u2014don\u2019t assume the EC2 total means compute alone. [K3]\n\n### 3. Find what changed\nCorrelate the spike\u2019s start with deployments, infrastructure-as-code changes, Auto Scaling activity, and scheduled jobs. [K4] Check **CloudTrail** around November 8 for `RunInstances` or related resource-creation calls, identifying who launched resources and where. [K4]\n\nIf you find unexpected large or GPU instances in an unused Region, treat that as possible credential compromise: rotate the affected credentials immediately and contact AWS Support. [K4]\n\n### 4. Contain only the confirmed waste\nIf the investigation identifies forgotten instances or runaway scaling, stop the unnecessary instances or scale down the affected Auto Scaling group; snapshot anything that might hold data before deleting it. [K5]\n\nBecause spend returned to its earlier range, first verify whether the responsible resources still exist rather than making blanket cuts.\n\n### 5. Prevent a repeat\nAdd an EC2 budget alert or Cost Anomaly Detection monitor, and document the responsible resources, owner, cause, and fix. [K6]\n\n**Your first practical action:** get the November 8 **usage-type and Region breakdown**. That will tell us which investigation branch to follow. [K3]",
+          "tools": [
+            "get_daily_costs",
+            "get_anomalies"
+          ],
+          "citations": [
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md"
+          ],
+          "cited": true,
+          "latency_ms": 23631,
+          "tokens": 12714,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer accurately describes the daily spike and empty anomaly results, follows the supported investigation runbook, and covers all reference steps including attribution, CloudTrail, credential rotation, containment, and preventive alerts."
+        },
+        {
+          "id": "top-service",
+          "kind": "data",
+          "question": "Which service has cost the most across all my data, and how much did it cost?",
+          "reference": "EC2 costs the most, $6,200.66 in total.",
+          "answer": "**EC2** cost the most: **$6,200.66** across all your data, from August 23 to November 20, 2026.",
+          "tools": [
+            "get_cost_summary"
+          ],
+          "citations": [],
+          "cited": null,
+          "latency_ms": 6714,
+          "tokens": 11444,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer correctly identifies EC2 as the highest-cost service at $6,200.66, and its stated date range matches the tool query."
+        },
+        {
+          "id": "last-7-days",
+          "kind": "data",
+          "question": "What was my total AWS spend over the last 7 days, including today?",
+          "reference": "Total spend from 2026-11-14 to today is $809.86.",
+          "answer": "Your total AWS spend over the last 7 days, including today (**November 14\u201320, 2026**), was **$809.86 USD**.",
+          "tools": [
+            "get_cost_summary"
+          ],
+          "citations": [],
+          "cited": null,
+          "latency_ms": 7431,
+          "tokens": 11437,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer reports the exact total and inclusive date range supported by the tool output and matches the reference."
+        },
+        {
+          "id": "anomalies",
+          "kind": "data",
+          "question": "Were there any spending anomalies? List each service and date.",
+          "reference": "There are no anomalies.",
+          "answer": "No spending anomalies were detected in your cost data for **August 23\u2013November 20, 2026**, so there are no services or dates to list.",
+          "tools": [
+            "get_anomalies"
+          ],
+          "citations": [],
+          "cited": null,
+          "latency_ms": 4410,
+          "tokens": 11283,
+          "cost_usd": null,
+          "faithfulness": 0.5,
+          "correctness": 1.0,
+          "reason": "The answer correctly reports no anomalies and no services or dates to list, but the August 23\u2013November 20, 2026 date range is unsupported by the context."
+        },
+        {
+          "id": "spike-advice",
+          "kind": "mixed",
+          "question": "Which service had the biggest anomaly, and what should I check to find the cause?",
+          "reference": "Names the service and date of the largest anomaly from the data, and suggests runbook steps such as grouping by usage type, checking recent deployments/Auto Scaling and CloudTrail.",
+          "answer": "**EC2 had the largest observed service-level spike: $259.75 on November 8.** However, the anomaly detector returned **no flagged anomalies**, so this is a daily-cost spike\u2014not a detector-confirmed anomaly.\n\nEC2\u2019s daily spend over the preceding four weeks ranged from **$40.59 to $88.71**. It returned to **$85.49 on November 9**, suggesting a short-lived event. The billing data does not identify its cause.\n\nTo investigate:\n\n1. **Break down EC2 costs in Cost Explorer** for November 8 by usage type, then Region, linked account, and resource tags. Look for instance-hour charges (`BoxUsage`), EBS storage, or data transfer to identify what increased. [K3]\n2. **Check what changed around November 8:** deployments, Auto Scaling activity, scheduled jobs, and CloudTrail `RunInstances` events. Also rule out a planned load test, migration, or upfront commitment purchase. [K4][K2]\n\nIf you find unexpected large or GPU instances in an unused Region, investigate possible leaked credentials; rotate affected credentials immediately and contact AWS Support. [K4]",
+          "tools": [
+            "get_anomalies",
+            "get_daily_costs",
+            "get_cost_summary",
+            "get_daily_costs",
+            "get_daily_costs",
+            "get_cost_summary"
+          ],
+          "citations": [
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md",
+            "cost-anomaly-runbook.md"
+          ],
+          "cited": true,
+          "latency_ms": 24209,
+          "tokens": 37460,
+          "cost_usd": null,
+          "faithfulness": 1.0,
+          "correctness": 1.0,
+          "reason": "The answer correctly identifies EC2\u2019s largest observed spike on November 8 at $259.75, distinguishes it from detector-confirmed anomalies, and provides investigation steps supported by the runbook."
+        }
+      ]
+    }
+  }
+}

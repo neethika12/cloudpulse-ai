@@ -1,7 +1,7 @@
 import random
 from datetime import date, timedelta
 from sqlalchemy.orm import Session
-from app.models import CloudAccount, CostRecord
+from app.models import Anomaly, CloudAccount, CostRecord
 
 SERVICES = {
     "EC2": (40, 90),
@@ -25,6 +25,11 @@ def seed_mock_data(db: Session, days: int = 90) -> CloudAccount:
         )
         db.add(account)
         db.flush()
+
+    # Re-seeding replaces the demo data instead of piling duplicate rows on top.
+    # Old anomalies point at the replaced data, so they go too (re-run detection after).
+    db.query(CostRecord).filter_by(account_id=account.id).delete()
+    db.query(Anomaly).filter_by(account_id=account.id).delete()
 
     today = date.today()
     for offset in range(days):

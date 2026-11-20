@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from prometheus_fastapi_instrumentator import Instrumentator
 
 from app.logging_config import configure_logging
-from app.routes import health, accounts, costs, chat, anomalies, auth
+from app.routes import health, accounts, costs, chat, anomalies, auth, knowledge, usage
 
 configure_logging()
 logger = logging.getLogger("cloudpulse")
@@ -52,6 +52,8 @@ app.include_router(accounts.router)
 app.include_router(costs.router)
 app.include_router(chat.router)
 app.include_router(anomalies.router)
+app.include_router(knowledge.router)
+app.include_router(usage.router)
 
 # Exposes /metrics in Prometheus text format: request counts, latency histograms,
 # and status codes per endpoint. Point a local Prometheus/Grafana stack at it, or

@@ -42,7 +42,7 @@ const STEPS: Step[] = [
   {
     icon: MessageSquare,
     title: "Ask questions in plain English",
-    body: 'Index your cost data, then ask things like "which service costs the most?" — answered by a local AI pipeline, no API key required.',
+    body: 'Ask things like "why did EC2 spike?" or "how do I cut NAT gateway costs?". The assistant queries your cost data for numbers and cites FinOps guides for advice.',
     tab: "chat",
   },
   {
