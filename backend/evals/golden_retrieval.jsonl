@@ -1,0 +1,30 @@
+{"question": "How can I tell if my EC2 instances are too big for their workload?", "relevant": ["ec2-rightsizing.md"]}
+{"question": "Is it worth moving our servers to Arm-based processors?", "relevant": ["ec2-rightsizing.md"]}
+{"question": "Our dev environment runs all weekend but nobody uses it. What should we do?", "relevant": ["ec2-rightsizing.md"]}
+{"question": "Should I migrate gp2 volumes to gp3?", "relevant": ["ec2-rightsizing.md", "rds-database-costs.md"]}
+{"question": "What is the difference between a Compute Savings Plan and an EC2 Instance Savings Plan?", "relevant": ["savings-plans-and-reserved-instances.md"]}
+{"question": "How much of our compute spend should we commit to for a one or three year discount?", "relevant": ["savings-plans-and-reserved-instances.md"]}
+{"question": "What does commitment utilization versus coverage mean?", "relevant": ["savings-plans-and-reserved-instances.md"]}
+{"question": "Can I get a long-term discount on my RDS database?", "relevant": ["rds-database-costs.md", "savings-plans-and-reserved-instances.md"]}
+{"question": "How much warning do I get before AWS takes back cheap spare capacity?", "relevant": ["spot-instances.md"]}
+{"question": "Which workloads can safely run on interruptible instances?", "relevant": ["spot-instances.md"]}
+{"question": "How do I avoid running out of Spot capacity?", "relevant": ["spot-instances.md"]}
+{"question": "Where should I keep log files I must retain for seven years but almost never read?", "relevant": ["s3-storage-optimization.md"]}
+{"question": "Why did moving millions of tiny files to Standard-IA make my bill go up?", "relevant": ["s3-storage-optimization.md"]}
+{"question": "Our versioned bucket keeps growing even though we delete files. Why?", "relevant": ["s3-storage-optimization.md"]}
+{"question": "incomplete multipart uploads lifecycle rule", "relevant": ["s3-storage-optimization.md"]}
+{"question": "Does a Multi-AZ database cost more?", "relevant": ["rds-database-costs.md"]}
+{"question": "I stopped my RDS instance but it started again by itself a week later.", "relevant": ["rds-database-costs.md"]}
+{"question": "How do I pick the cheapest memory setting for a serverless function?", "relevant": ["lambda-serverless-costs.md"]}
+{"question": "Is provisioned concurrency billed even when there is no traffic?", "relevant": ["lambda-serverless-costs.md"]}
+{"question": "A function writing to the bucket that triggers it is costing a fortune.", "relevant": ["lambda-serverless-costs.md"]}
+{"question": "Private subnet instances downloading lots of data from S3 are expensive. How do I fix that?", "relevant": ["networking-and-data-transfer.md"]}
+{"question": "How much does traffic between availability zones cost?", "relevant": ["networking-and-data-transfer.md"]}
+{"question": "Will putting a CDN in front of my bucket lower egress charges?", "relevant": ["networking-and-data-transfer.md"]}
+{"question": "Are unattached Elastic IP addresses charged?", "relevant": ["networking-and-data-transfer.md", "ec2-rightsizing.md"]}
+{"question": "Our EC2 bill tripled yesterday. How should I investigate?", "relevant": ["cost-anomaly-runbook.md"]}
+{"question": "Large GPU instances appeared in a region we never use.", "relevant": ["cost-anomaly-runbook.md"]}
+{"question": "How does CloudPulse decide a day is an anomaly?", "relevant": ["cost-anomaly-runbook.md"]}
+{"question": "Why don't my new tags show up in Cost Explorer?", "relevant": ["tagging-budgets-and-finops.md"]}
+{"question": "How do I get an email before we go over our monthly cloud budget?", "relevant": ["tagging-budgets-and-finops.md"]}
+{"question": "What are the phases of the FinOps lifecycle?", "relevant": ["tagging-budgets-and-finops.md"]}

@@ -18,7 +18,7 @@ const FEATURES = [
     icon: MessageSquare,
     title: "Chat with your cloud spend",
     description:
-      "Ask questions in plain English, answered by a local RAG pipeline built on LangChain and pgvector.",
+      "Ask questions in plain English. An AI agent queries your cost data and cites FinOps guides found with hybrid RAG.",
   },
   {
     icon: AlertTriangle,
@@ -81,7 +81,7 @@ export default function LandingPage({ onGetStarted }: { onGetStarted: () => void
       </section>
 
       <footer className="landing-footer">
-        Built with FastAPI, PostgreSQL + pgvector, LangChain, scikit-learn, and React.
+        Built with FastAPI, PostgreSQL + pgvector, OpenAI, scikit-learn, and React.
       </footer>
     </div>
   );

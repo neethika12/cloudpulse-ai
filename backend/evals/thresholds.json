@@ -1,0 +1,8 @@
+{
+  "retrieval": {"hit@5": 0.9, "mrr": 0.7},
+  "answers": {
+    "faithfulness": 0.8,
+    "correctness": 0.75,
+    "citation_rate": 0.8
+  }
+}

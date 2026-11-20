@@ -1,0 +1,18 @@
+{"question": "We pay the full hourly price for machines that run around the clock all year. Can we pay less if we promise to keep using them?", "relevant": ["savings-plans-and-reserved-instances.md"]}
+{"question": "Our nightly batch jobs don't mind being killed and restarted. Is there a much cheaper way to run them?", "relevant": ["spot-instances.md"]}
+{"question": "Compliance backups we never touch are sitting in the default storage tier. Is there somewhere cheaper to keep them?", "relevant": ["s3-storage-optimization.md"]}
+{"question": "Our staging database keeps a hot standby copy in a second data center. Do we really need that outside production?", "relevant": ["rds-database-costs.md"]}
+{"question": "Each call to our serverless functions finishes quickly, but the bill is still high. Could the amount of RAM we configured be the problem?", "relevant": ["lambda-serverless-costs.md"]}
+{"question": "Servers with no public address download huge datasets from object storage, and the bill shows a big per-gigabyte processing fee.", "relevant": ["networking-and-data-transfer.md"]}
+{"question": "Services in different data centers of the same region talk to each other constantly. Does that traffic cost anything?", "relevant": ["networking-and-data-transfer.md"]}
+{"question": "Our bill jumped overnight and nobody knows why. Where do we start?", "relevant": ["cost-anomaly-runbook.md"]}
+{"question": "We think someone stole our access keys and is mining cryptocurrency on our account.", "relevant": ["cost-anomaly-runbook.md"]}
+{"question": "Finance wants every team to see exactly what it spends each month.", "relevant": ["tagging-budgets-and-finops.md"]}
+{"question": "How can we get warned before this month's spending goes over plan?", "relevant": ["tagging-budgets-and-finops.md"]}
+{"question": "Our application servers are sized for holiday-season traffic all year round.", "relevant": ["ec2-rightsizing.md"]}
+{"question": "Developers forget to turn off their test machines at night and over weekends.", "relevant": ["ec2-rightsizing.md"]}
+{"question": "We moved millions of small thumbnails to a cheaper, rarely-read tier and costs went up instead of down.", "relevant": ["s3-storage-optimization.md"]}
+{"question": "One of our functions keeps triggering itself over and over.", "relevant": ["lambda-serverless-costs.md"]}
+{"question": "We pay to keep function instances warm even at 3am when nobody is using the app.", "relevant": ["lambda-serverless-costs.md"]}
+{"question": "Would serving our videos through a content delivery network be cheaper than straight from the bucket?", "relevant": ["networking-and-data-transfer.md"]}
+{"question": "Disks that belonged to servers we deleted months ago still show up on the bill.", "relevant": ["ec2-rightsizing.md"]}
